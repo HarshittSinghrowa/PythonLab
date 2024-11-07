@@ -1,15 +1,94 @@
-
-def is_prime(n):
-    if n <= 1:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
+Q-1) WAP to find a number is prime or not
+    def is_prime(n):
+        if n <= 1:
             return False
-    return True
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+    
+    num = int(input("Enter a number: "))
+    
+    if is_prime(num):
+        print(f"{num} is a prime number.")
+    else:
+        print(f"{num} is not a prime number.")
 
-num = int(input("Enter a number: "))
+Q-2) WAP to find the given number is palindrome or not
+    def is_palindrome(num):
+        num_str = str(num)
+        return num_str == num_str[::-1]
+    
+    num = int(input("Enter a number: "))
+    
+    if is_palindrome(num):
+        print(f"{num} is a palindrome.")
+    else:
+        print(f"{num} is not a palindrome.")
 
-if is_prime(num):
-    print(f"{num} is a prime number.")
-else:
-    print(f"{num} is not a prime number.")
+Q-3) WAP to find the grade of student using given percentage
+    def get_grade(percentage):
+        if percentage >= 90:
+            return "A"
+        elif percentage >= 80:
+            return "B"
+        elif percentage >= 70:
+            return "C"
+        elif percentage >= 60:
+            return "D"
+        else:
+            return "F"
+    
+    percentage = float(input("Enter the percentage: "))
+    
+    grade = get_grade(percentage)
+    
+    print(f"The grade for {percentage}% is: {grade}")
+
+Q-4) WAP to create a simple console based calculator
+    def add(x, y):
+        return x + y
+    
+    def subtract(x, y):
+        return x - y
+    
+    def multiply(x, y):
+        return x * y
+    
+    def divide(x, y):
+        if y == 0:
+            return "Error! Division by zero."
+        return x / y
+    
+    def main():
+        print("Simple Calculator")
+        print("Choose operation:")
+        print("1. Add")
+        print("2. Subtract")
+        print("3. Multiply")
+        print("4. Divide")
+        print("5. Exit")
+        
+        while True:
+            choice = input("Enter choice (1-5): ")
+    
+            if choice == '5':
+                print("Exiting the calculator.")
+                break
+    
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+    
+            if choice == '1':
+                print(f"Result: {add(num1, num2)}")
+            elif choice == '2':
+                print(f"Result: {subtract(num1, num2)}")
+            elif choice == '3':
+                print(f"Result: {multiply(num1, num2)}")
+            elif choice == '4':
+                print(f"Result: {divide(num1, num2)}")
+            else:
+                print("Invalid choice. Please select a valid operation.")
+    
+    if __name__ == "__main__":
+        main()
